@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from . import views
+from tracker import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('home/', )
+    path('', views.index, name='index'),
+    path('project/<int:pk>/', views.project_detail, name='project_detail'),
 ]
