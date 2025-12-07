@@ -1,0 +1,13 @@
+{% extends 'tracker/base.html' %}
+{% block content %}
+<div class="card">
+  <div class="card-body">
+    <h2>{{ project.title }}</h2>
+    <p><strong>Технологии:</strong> {{ project.tech_stack|default:"—" }}</p>
+    <p>{{ project.description }}</p>
+    <small class="text-muted">Создано: {{ project.created_at|date:"d.m.Y H:i" }}</small>
+    <br><br>
+    <a href="{% url 'index' %}" class="btn btn-secondary">← Назад</a>
+  </div>
+</div>
+{% endblock %}
